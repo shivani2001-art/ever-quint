@@ -1,0 +1,254 @@
+.cardWrapper {
+  /* Plain container, no 3D transforms */
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  box-shadow: 0 2px 8px #00000018;
+  border: none;
+}
+
+.priorityStripe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  border-radius: 3px 0 0 3px;
+}
+
+.content {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.4;
+  letter-spacing: -0.2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.priorityBadge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+  height: 22px;
+  padding: 0 8px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.priorityHigh {
+  background-color: #EF44441A;
+  color: #EF4444;
+}
+
+.priorityMedium {
+  background-color: #6366F11A;
+  color: #F59E0B;
+}
+
+.priorityLow {
+  background-color: #71717A1A;
+  color: #71717A;
+}
+
+.description {
+  font-size: 12px;
+  font-weight: normal;
+  color: #A1A1AA;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.tagsRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.tagIcon {
+  width: 10px;
+  height: 10px;
+  color: #52525B;
+  flex-shrink: 0;
+}
+
+.tagPill {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  border-radius: 4px;
+  padding: 0 7px;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.tagFirst {
+  background-color: #6366F11A;
+  color: #A855F7;
+}
+
+.tagDefault {
+  background-color: #1A1A1A;
+  color: #52525B;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footerLeft {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 8px;
+  font-weight: 700;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.assigneeName {
+  font-size: 11px;
+  font-weight: 500;
+  color: #A1A1AA;
+}
+
+.avatarEmpty {
+  background-color: #27272A;
+  color: #71717A;
+}
+
+:global([data-theme='light']) .avatarEmpty {
+  background-color: #E4E4E7;
+  color: #A1A1AA;
+}
+
+.unassigned {
+  font-size: 11px;
+  font-style: italic;
+  color: var(--color-text-tertiary);
+}
+
+.footerRight {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.clockIcon {
+  width: 10px;
+  height: 10px;
+  color: #3F3F46;
+}
+
+.time {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: #52525B;
+}
+
+.doneCard {
+  opacity: 0.65;
+}
+
+.completedIcon {
+  width: 10px;
+  height: 10px;
+  color: var(--color-success);
+  flex-shrink: 0;
+}
+
+.overdueIcon {
+  width: 10px;
+  height: 10px;
+  color: var(--color-destructive);
+  flex-shrink: 0;
+}
+
+.overdue {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--color-destructive);
+}
+
+.doneIcon {
+  width: 14px;
+  height: 14px;
+  color: var(--color-success);
+  flex-shrink: 0;
+}
+
+.dragging {
+  opacity: 0.92;
+  z-index: 9999;
+  position: relative;
+}
+
+.dragging .card {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+
+/* ── Light theme ─────────────────────────────────── */
+
+:global([data-theme='light']) .card {
+  background-color: #FFFFFF;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+:global([data-theme='light']) .description {
+  color: #71717A;
+}
+
+:global([data-theme='light']) .tagDefault {
+  background-color: #F4F4F5;
+  color: #71717A;
+}
+
+:global([data-theme='light']) .assigneeName {
+  color: #52525B;
+}
+
+:global([data-theme='light']) .clockIcon {
+  color: #A1A1AA;
+}
+
+:global([data-theme='light']) .time {
+  color: #A1A1AA;
+}
