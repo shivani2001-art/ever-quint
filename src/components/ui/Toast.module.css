@@ -1,0 +1,77 @@
+.container {
+  position: fixed;
+  bottom: var(--spacing-lg);
+  right: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  z-index: 2000;
+  max-width: 460px;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  font-size: 0.8125rem;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+.success {
+  border: 1px solid #22C55E20;
+  box-shadow: 0 4px 16px #22C55E08;
+}
+
+.error {
+  border: 1px solid #EF444420;
+  box-shadow: 0 4px 16px #EF444408;
+}
+
+.info {
+  border: 1px solid #6366F120;
+  box-shadow: 0 4px 16px #6366F108;
+}
+
+.toastIcon {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.message {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.dismissButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: none;
+  border: none;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  color: #52525B;
+  font-size: 14px;
+  transition: color var(--transition-fast);
+}
+
+.dismissButton:hover {
+  color: var(--color-text);
+}
+
+.dismissButton:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
