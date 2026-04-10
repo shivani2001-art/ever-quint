@@ -73,7 +73,7 @@ function AppContent() {
       setDeletingTask(null);
       setEditingTask(null);
       setViewingTask(null);
-      addToast('Task deleted', 'info');
+      addToast('Task deleted', 'success');
     }
   };
 
