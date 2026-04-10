@@ -42,3 +42,4 @@ lerna-debug.log*
 
 # Screenshots script
 scripts/screenshots.mjs
+.vercel
