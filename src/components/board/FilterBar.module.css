@@ -1,0 +1,336 @@
+.filterBar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ── Search ───────────────────────────────────────── */
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 220px;
+  height: 32px;
+  padding: 0 10px;
+  background-color: #141414;
+  border: 1px solid #1A1A1A;
+  border-radius: 7px;
+  flex-shrink: 0;
+  transition: border-color var(--transition-fast);
+}
+
+.searchBox:focus-within {
+  border-color: var(--color-primary);
+}
+
+.searchIcon {
+  width: 13px;
+  height: 13px;
+  color: #52525B;
+  flex-shrink: 0;
+}
+
+.searchInput {
+  border: none;
+  background: none;
+  outline: none;
+  color: var(--color-text);
+  font-size: 12px;
+  font-family: var(--font-sans);
+  font-weight: normal;
+  width: 100%;
+  padding: 0;
+  height: 100%;
+}
+
+.searchInput::placeholder {
+  color: #52525B;
+}
+
+/* ── Separator ────────────────────────────────────── */
+
+.separator {
+  width: 1px;
+  height: 20px;
+  background-color: #1A1A1A;
+  flex-shrink: 0;
+}
+
+/* ── Shared dropdown / select control base ────────── */
+
+.filterIcon {
+  width: 13px;
+  height: 13px;
+  color: #71717A;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+.chevron {
+  width: 12px;
+  height: 12px;
+  color: #52525B;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* ── Status dropdown ──────────────────────────────── */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdownTrigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 10px;
+  background-color: #141414;
+  border: 1px solid #1A1A1A;
+  border-radius: 7px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color var(--transition-fast);
+}
+
+.dropdownTrigger:hover {
+  border-color: #27272A;
+}
+
+.dropdownTrigger:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.dropdownLabel {
+  color: #A1A1AA;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: var(--font-sans);
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  min-width: 18px;
+  padding: 0 5px;
+  border-radius: 9px;
+  background-color: #6366F11A;
+  color: #6366F1;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  min-width: 160px;
+  background-color: #141414;
+  border: 1px solid #1A1A1A;
+  border-radius: 8px;
+  padding: 4px;
+  z-index: 50;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #A1A1AA;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  transition: background-color var(--transition-fast);
+}
+
+.dropdownItem:hover {
+  background-color: #1A1A1A;
+}
+
+.dropdownCheckbox {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #3F3F46;
+  border-radius: 3px;
+  background-color: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.dropdownCheckbox:checked {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.dropdownCheckbox:checked::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  width: 4px;
+  height: 7px;
+  border: solid #fff;
+  border-width: 0 1.5px 1.5px 0;
+  transform: rotate(45deg);
+}
+
+.dropdownCheckbox:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ── Native select controls (Priority, Sort) ──────── */
+
+.selectControl {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 10px;
+  background-color: #141414;
+  border: 1px solid #1A1A1A;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.selectControl:hover {
+  border-color: #27272A;
+}
+
+.selectControl:focus-within {
+  border-color: var(--color-primary);
+}
+
+.filterSelect {
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+  color: #A1A1AA;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  padding: 0;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.filterSelectMono {
+  font-family: var(--font-mono);
+}
+
+/* ── Spacer ───────────────────────────────────────── */
+
+.spacer {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Accessibility ────────────────────────────────── */
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ── Light theme ─────────────────────────────────── */
+
+:global([data-theme='light']) .searchBox {
+  background-color: #F4F4F5;
+  border-color: #E4E4E7;
+}
+
+:global([data-theme='light']) .separator {
+  background-color: #E4E4E7;
+}
+
+:global([data-theme='light']) .dropdownTrigger {
+  background-color: #F4F4F5;
+  border-color: #E4E4E7;
+}
+
+:global([data-theme='light']) .dropdownTrigger:hover {
+  border-color: #D4D4D8;
+}
+
+:global([data-theme='light']) .dropdownMenu {
+  background-color: #FFFFFF;
+  border-color: #E4E4E7;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+:global([data-theme='light']) .dropdownItem:hover {
+  background-color: #F4F4F5;
+}
+
+:global([data-theme='light']) .dropdownCheckbox {
+  border-color: #D4D4D8;
+}
+
+:global([data-theme='light']) .selectControl {
+  background-color: #F4F4F5;
+  border-color: #E4E4E7;
+}
+
+:global([data-theme='light']) .selectControl:hover {
+  border-color: #D4D4D8;
+}
+
+:global([data-theme='light']) .dropdownLabel {
+  color: #52525B;
+}
+
+:global([data-theme='light']) .filterIcon {
+  color: #71717A;
+}
+
+:global([data-theme='light']) .chevron {
+  color: #A1A1AA;
+}
+
+/* ── Responsive ───────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .filterBar {
+    flex-wrap: wrap;
+  }
+
+  .searchBox {
+    width: 100%;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .spacer {
+    display: none;
+  }
+}
